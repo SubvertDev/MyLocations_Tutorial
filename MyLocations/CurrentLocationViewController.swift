@@ -39,7 +39,14 @@ class CurrentLocationViewController: UIViewController, CLLocationManagerDelegate
             showLocationServicesDeniedAlert()
             return
         }
-        startLocationManager()
+        
+        if updatingLocation {
+            stopLocationManager()
+        } else {
+            location = nil
+            lastLocationError = nil
+            startLocationManager()
+        }
         updateLabels()
     }
     
@@ -80,13 +87,21 @@ class CurrentLocationViewController: UIViewController, CLLocationManagerDelegate
     }
     
     // MARK: - Helper Methods
-    func showLocationServicesDeniedAlert() {
-        let alert = UIAlertController(title: "Locations Services Disabled", message: "Please enable location services for this app in Settings.", preferredStyle: .alert)
-        
-        let action = UIAlertAction(title: "OK", style: .default, handler: nil)
-        alert.addAction(action)
-        
-        present(alert, animated: true, completion: nil)
+    func startLocationManager() {
+        if CLLocationManager.locationServicesEnabled() {
+            locationManager.delegate = self
+            locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
+            locationManager.startUpdatingLocation()
+            updatingLocation = true
+        }
+    }
+    
+    func stopLocationManager() {
+        if updatingLocation {
+            locationManager.stopUpdatingLocation()
+            locationManager.delegate = nil
+            updatingLocation = false
+        }
     }
     
     func updateLabels() {
@@ -114,23 +129,24 @@ class CurrentLocationViewController: UIViewController, CLLocationManagerDelegate
             }
             messageLabel.text = statusMessage
         }
+        configureGetButton()
     }
     
-    func startLocationManager() {
-        if CLLocationManager.locationServicesEnabled() {
-            locationManager.delegate = self
-            locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
-            locationManager.startUpdatingLocation()
-            updatingLocation = true
-        }
-    }
-    
-    func stopLocationManager() {
+    func configureGetButton() {
         if updatingLocation {
-            locationManager.stopUpdatingLocation()
-            locationManager.delegate = nil
-            updatingLocation = false
+            getButton.setTitle("Stop", for: .normal)
+        } else {
+            getButton.setTitle("Get My Location", for: .normal)
         }
+    }
+    
+    func showLocationServicesDeniedAlert() {
+        let alert = UIAlertController(title: "Locations Services Disabled", message: "Please enable location services for this app in Settings.", preferredStyle: .alert)
+        
+        let action = UIAlertAction(title: "OK", style: .default, handler: nil)
+        alert.addAction(action)
+        
+        present(alert, animated: true, completion: nil)
     }
     
 }
