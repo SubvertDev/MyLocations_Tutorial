@@ -27,6 +27,8 @@ class CurrentLocationViewController: UIViewController, CLLocationManagerDelegate
     var performingReversGeocoding = false
     var lastGeocodingError: Error?
     
+    var timer: Timer?
+    
     // MARK: - Actions
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -132,6 +134,12 @@ class CurrentLocationViewController: UIViewController, CLLocationManagerDelegate
             locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
             locationManager.startUpdatingLocation()
             updatingLocation = true
+            
+            timer = Timer.scheduledTimer(timeInterval: 60,
+                                         target: self,
+                                         selector: #selector(didTimeOut),
+                                         userInfo: nil,
+                                         repeats: false)
         }
     }
     
@@ -140,6 +148,10 @@ class CurrentLocationViewController: UIViewController, CLLocationManagerDelegate
             locationManager.stopUpdatingLocation()
             locationManager.delegate = nil
             updatingLocation = false
+            
+            if let timer = timer {
+                timer.invalidate()
+            }
         }
     }
     
@@ -216,6 +228,17 @@ class CurrentLocationViewController: UIViewController, CLLocationManagerDelegate
         }
         
         return line1 + "\n" + line2
+    }
+    
+    @objc func didTimeOut() {
+        print("Time out")
+        if location == nil {
+            stopLocationManager()
+            lastLocationError = NSError(domain: "MyLocationsErrorDomain",
+                                        code: 1,
+                                        userInfo: nil)
+            updateLabels()
+        }
     }
     
 }
