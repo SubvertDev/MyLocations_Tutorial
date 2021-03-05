@@ -29,12 +29,23 @@ class CurrentLocationViewController: UIViewController, CLLocationManagerDelegate
     
     var timer: Timer?
     
-    // MARK: - Actions
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         updateLabels()
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.isNavigationBarHidden = true
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        navigationController?.isNavigationBarHidden = false
+    }
+    
+    // MARK: - Actions
     
     @IBAction func getLocation() {
         let authStatus = locationManager.authorizationStatus
@@ -162,6 +173,7 @@ class CurrentLocationViewController: UIViewController, CLLocationManagerDelegate
             
             if let placemark = placemark {
                 addressLabel.text = string(from: placemark)
+                tagButton.isHidden = false
             } else if performingReversGeocoding {
                 addressLabel.text = "Searching for Address..."
             } else if lastGeocodingError != nil {

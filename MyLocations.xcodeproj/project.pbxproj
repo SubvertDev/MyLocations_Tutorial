@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B814BB4325F29A9800360725 /* LocationDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B814BB4225F29A9800360725 /* LocationDetailsViewController.swift */; };
 		B84A983D25E6EA4F00AD97F3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B84A983C25E6EA4F00AD97F3 /* AppDelegate.swift */; };
 		B84A983F25E6EA4F00AD97F3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B84A983E25E6EA4F00AD97F3 /* SceneDelegate.swift */; };
 		B84A984125E6EA4F00AD97F3 /* CurrentLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B84A984025E6EA4F00AD97F3 /* CurrentLocationViewController.swift */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B814BB4225F29A9800360725 /* LocationDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDetailsViewController.swift; sourceTree = "<group>"; };
 		B84A983925E6EA4F00AD97F3 /* MyLocations.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyLocations.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B84A983C25E6EA4F00AD97F3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B84A983E25E6EA4F00AD97F3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -61,6 +63,7 @@
 				B84A983C25E6EA4F00AD97F3 /* AppDelegate.swift */,
 				B84A983E25E6EA4F00AD97F3 /* SceneDelegate.swift */,
 				B84A984025E6EA4F00AD97F3 /* CurrentLocationViewController.swift */,
+				B814BB4225F29A9800360725 /* LocationDetailsViewController.swift */,
 				B84A984225E6EA4F00AD97F3 /* Main.storyboard */,
 				B84A984825E6EA5200AD97F3 /* Assets.xcassets */,
 				B84A984A25E6EA5200AD97F3 /* LaunchScreen.storyboard */,
@@ -142,6 +145,7 @@
 			files = (
 				B84A984125E6EA4F00AD97F3 /* CurrentLocationViewController.swift in Sources */,
 				B84A983D25E6EA4F00AD97F3 /* AppDelegate.swift in Sources */,
+				B814BB4325F29A9800360725 /* LocationDetailsViewController.swift in Sources */,
 				B84A984725E6EA4F00AD97F3 /* MyLocations.xcdatamodeld in Sources */,
 				B84A983F25E6EA4F00AD97F3 /* SceneDelegate.swift in Sources */,
 			);
