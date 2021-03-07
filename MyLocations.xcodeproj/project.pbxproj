@@ -17,6 +17,7 @@
 		B84A984C25E6EA5200AD97F3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B84A984A25E6EA5200AD97F3 /* LaunchScreen.storyboard */; };
 		B8EEE6AE25F5323B0002C126 /* CategoryPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8EEE6AD25F5323B0002C126 /* CategoryPickerViewController.swift */; };
 		B8EEE6B225F53D1B0002C126 /* HudView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8EEE6B125F53D1B0002C126 /* HudView.swift */; };
+		B8EEE6B625F54AD80002C126 /* Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8EEE6B525F54AD80002C126 /* Functions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		B84A984D25E6EA5200AD97F3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B8EEE6AD25F5323B0002C126 /* CategoryPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryPickerViewController.swift; sourceTree = "<group>"; };
 		B8EEE6B125F53D1B0002C126 /* HudView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HudView.swift; sourceTree = "<group>"; };
+		B8EEE6B525F54AD80002C126 /* Functions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Functions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +72,7 @@
 				B814BB4225F29A9800360725 /* LocationDetailsViewController.swift */,
 				B8EEE6AD25F5323B0002C126 /* CategoryPickerViewController.swift */,
 				B8EEE6B125F53D1B0002C126 /* HudView.swift */,
+				B8EEE6B525F54AD80002C126 /* Functions.swift */,
 				B84A984225E6EA4F00AD97F3 /* Main.storyboard */,
 				B84A984825E6EA5200AD97F3 /* Assets.xcassets */,
 				B84A984A25E6EA5200AD97F3 /* LaunchScreen.storyboard */,
@@ -152,6 +155,7 @@
 				B8EEE6AE25F5323B0002C126 /* CategoryPickerViewController.swift in Sources */,
 				B84A984125E6EA4F00AD97F3 /* CurrentLocationViewController.swift in Sources */,
 				B84A983D25E6EA4F00AD97F3 /* AppDelegate.swift in Sources */,
+				B8EEE6B625F54AD80002C126 /* Functions.swift in Sources */,
 				B814BB4325F29A9800360725 /* LocationDetailsViewController.swift in Sources */,
 				B84A984725E6EA4F00AD97F3 /* MyLocations.xcdatamodeld in Sources */,
 				B8EEE6B225F53D1B0002C126 /* HudView.swift in Sources */,
