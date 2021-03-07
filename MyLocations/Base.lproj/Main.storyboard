@@ -166,6 +166,9 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="5hX-Sy-Wzg" kind="show" identifier="PickCategory" id="V9o-GB-VeB"/>
+                                        </connections>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
@@ -328,6 +331,48 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nlS-Kn-PBy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2418" y="126"/>
+        </scene>
+        <!--Category Picker View Controller-->
+        <scene sceneID="rQM-F4-jIq">
+            <objects>
+                <tableViewController id="5hX-Sy-Wzg" customClass="CategoryPickerViewController" customModule="MyLocations" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="exL-mf-hAD">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" textLabel="VFS-ce-ldO" style="IBUITableViewCellStyleDefault" id="I20-XG-Gli">
+                                <rect key="frame" x="0.0" y="28" width="375" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="I20-XG-Gli" id="oCk-Tu-5s5">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="VFS-ce-ldO">
+                                            <rect key="frame" x="16" y="0.0" width="343" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="G7t-J5-RQc" kind="unwind" identifier="PickedCategory" unwindAction="categoryPickerDidPickCategory:" id="nWs-uf-rCI"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="5hX-Sy-Wzg" id="ugR-9u-4Xt"/>
+                            <outlet property="delegate" destination="5hX-Sy-Wzg" id="J7Y-Ii-1Q2"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="dEA-61-88w"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="A9b-Hz-1DD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="G7t-J5-RQc" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="3148" y="125"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="dm5-FD-9ts">

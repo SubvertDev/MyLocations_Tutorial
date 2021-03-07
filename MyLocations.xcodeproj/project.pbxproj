@@ -15,6 +15,7 @@
 		B84A984725E6EA4F00AD97F3 /* MyLocations.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B84A984525E6EA4F00AD97F3 /* MyLocations.xcdatamodeld */; };
 		B84A984925E6EA5200AD97F3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B84A984825E6EA5200AD97F3 /* Assets.xcassets */; };
 		B84A984C25E6EA5200AD97F3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B84A984A25E6EA5200AD97F3 /* LaunchScreen.storyboard */; };
+		B8EEE6AE25F5323B0002C126 /* CategoryPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8EEE6AD25F5323B0002C126 /* CategoryPickerViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		B84A984825E6EA5200AD97F3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B84A984B25E6EA5200AD97F3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B84A984D25E6EA5200AD97F3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B8EEE6AD25F5323B0002C126 /* CategoryPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryPickerViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +66,7 @@
 				B84A983E25E6EA4F00AD97F3 /* SceneDelegate.swift */,
 				B84A984025E6EA4F00AD97F3 /* CurrentLocationViewController.swift */,
 				B814BB4225F29A9800360725 /* LocationDetailsViewController.swift */,
+				B8EEE6AD25F5323B0002C126 /* CategoryPickerViewController.swift */,
 				B84A984225E6EA4F00AD97F3 /* Main.storyboard */,
 				B84A984825E6EA5200AD97F3 /* Assets.xcassets */,
 				B84A984A25E6EA5200AD97F3 /* LaunchScreen.storyboard */,
@@ -143,6 +146,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B8EEE6AE25F5323B0002C126 /* CategoryPickerViewController.swift in Sources */,
 				B84A984125E6EA4F00AD97F3 /* CurrentLocationViewController.swift in Sources */,
 				B84A983D25E6EA4F00AD97F3 /* AppDelegate.swift in Sources */,
 				B814BB4325F29A9800360725 /* LocationDetailsViewController.swift in Sources */,
