@@ -8,8 +8,16 @@
 import UIKit
 import CoreLocation
 
-class LocationDetailsViewController: UITableViewController {
+private let dateFormatter: DateFormatter = {
+    let formatter = DateFormatter()
+    formatter.dateStyle = .medium
+    formatter.timeStyle = .short
+    print("Date Formatter Created")
+    return formatter
+}()
 
+class LocationDetailsViewController: UITableViewController {
+    
     @IBOutlet weak var descriptionTextView: UITextView!
     @IBOutlet weak var categoryLabel: UILabel!
     @IBOutlet weak var latitudeLabel: UILabel!
@@ -22,19 +30,19 @@ class LocationDetailsViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        descriptionTextView.text = ""
+        categoryLabel.text = ""
+        
+        latitudeLabel.text = String(format: "%.8f", coordinate.latitude)
+        longitudeLabel.text = String(format: "%.8f", coordinate.longitude)
+        if let placemark = placemark {
+            addressLabel.text = string(from: placemark)
+        } else {
+            addressLabel.text = "No Address Found"
+        }
+        dateLabel.text = format(date: Date())
     }
-
-    // MARK: - Table view data source
-
-//    override func numberOfSections(in tableView: UITableView) -> Int {
-//        return 0
-//    }
-//
-//    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        // #warning Incomplete implementation, return the number of rows
-//        return 0
-//    }
     
     // MARK: - Actions
     
@@ -46,15 +54,31 @@ class LocationDetailsViewController: UITableViewController {
         navigationController?.popViewController(animated: true)
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    // MARK: - Helper Methods
+    func string(from placemark: CLPlacemark) -> String {
+        var text = ""
+        if let tmp = placemark.subThoroughfare {
+            text += tmp + " "
+        }
+        if let tmp = placemark.thoroughfare {
+            text += tmp + ", "
+        }
+        if let tmp = placemark.locality {
+            text += tmp + ", "
+        }
+        if let tmp = placemark.administrativeArea {
+            text += tmp + " "
+        }
+        if let tmp = placemark.postalCode {
+            text += tmp + ", "
+        }
+        if let tmp = placemark.country {
+            text += tmp
+        }
+        return text
     }
-    */
-
+    
+    func format(date: Date) -> String {
+        return dateFormatter.string(from: date)
+    }
 }
