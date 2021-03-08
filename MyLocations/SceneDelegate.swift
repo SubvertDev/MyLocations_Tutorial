@@ -21,6 +21,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             let controller = navController.viewControllers.first as! CurrentLocationViewController
             controller.managedObjectContext = managedObjectContext
         }
+        listenForFatalCoreDataNotifications()
         //guard let _ = (scene as? UIWindowScene) else { return }
     }
     
@@ -97,6 +98,28 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
                 let nserror = error as NSError
                 fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
             }
+        }
+    }
+    
+    // MARK: - Helper Methods
+    
+    func listenForFatalCoreDataNotifications() {
+        NotificationCenter.default.addObserver(forName: dataSaveFailedNotification, object: nil, queue: OperationQueue.main) { _ in
+            let message = """
+            There was a fatal error in the app and it cannot continue.
+            Press OK to terminate the app. Sorry for the inconvenience.
+            """
+            
+            let alert = UIAlertController(title: "Internal Error", message: message, preferredStyle: .alert)
+            
+            let action = UIAlertAction(title: "OK", style: .default) { _ in
+                let exception = NSException(name: NSExceptionName.internalInconsistencyException, reason: "Fatal Core Data error", userInfo: nil)
+                exception.raise()
+            }
+            alert.addAction(action)
+            
+            let tabController = self.window!.rootViewController!
+            tabController.present(alert, animated: true, completion: nil)
         }
     }
     
