@@ -18,6 +18,7 @@
 		B84A984925E6EA5200AD97F3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B84A984825E6EA5200AD97F3 /* Assets.xcassets */; };
 		B84A984C25E6EA5200AD97F3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B84A984A25E6EA5200AD97F3 /* LaunchScreen.storyboard */; };
 		B894F24E25F906FF0078B812 /* LocationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B894F24D25F906FF0078B812 /* LocationsViewController.swift */; };
+		B894F25225F90BE10078B812 /* LocationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B894F25125F90BE10078B812 /* LocationCell.swift */; };
 		B8EEE6AE25F5323B0002C126 /* CategoryPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8EEE6AD25F5323B0002C126 /* CategoryPickerViewController.swift */; };
 		B8EEE6B225F53D1B0002C126 /* HudView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8EEE6B125F53D1B0002C126 /* HudView.swift */; };
 		B8EEE6B625F54AD80002C126 /* Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8EEE6B525F54AD80002C126 /* Functions.swift */; };
@@ -37,6 +38,7 @@
 		B84A984B25E6EA5200AD97F3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B84A984D25E6EA5200AD97F3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B894F24D25F906FF0078B812 /* LocationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsViewController.swift; sourceTree = "<group>"; };
+		B894F25125F90BE10078B812 /* LocationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationCell.swift; sourceTree = "<group>"; };
 		B8EEE6AD25F5323B0002C126 /* CategoryPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryPickerViewController.swift; sourceTree = "<group>"; };
 		B8EEE6B125F53D1B0002C126 /* HudView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HudView.swift; sourceTree = "<group>"; };
 		B8EEE6B525F54AD80002C126 /* Functions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Functions.swift; sourceTree = "<group>"; };
@@ -74,6 +76,7 @@
 			children = (
 				B84A983C25E6EA4F00AD97F3 /* AppDelegate.swift */,
 				B84A983E25E6EA4F00AD97F3 /* SceneDelegate.swift */,
+				B894F25125F90BE10078B812 /* LocationCell.swift */,
 				B84A984025E6EA4F00AD97F3 /* CurrentLocationViewController.swift */,
 				B814BB4225F29A9800360725 /* LocationDetailsViewController.swift */,
 				B8EEE6AD25F5323B0002C126 /* CategoryPickerViewController.swift */,
@@ -163,6 +166,7 @@
 			files = (
 				B8EEE6AE25F5323B0002C126 /* CategoryPickerViewController.swift in Sources */,
 				B84A984125E6EA4F00AD97F3 /* CurrentLocationViewController.swift in Sources */,
+				B894F25225F90BE10078B812 /* LocationCell.swift in Sources */,
 				B84A983D25E6EA4F00AD97F3 /* AppDelegate.swift in Sources */,
 				B8EEE6B625F54AD80002C126 /* Functions.swift in Sources */,
 				B894F24E25F906FF0078B812 /* LocationsViewController.swift in Sources */,
