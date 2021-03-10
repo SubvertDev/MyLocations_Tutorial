@@ -454,6 +454,7 @@
                                 <connections>
                                     <outlet property="addressLabel" destination="syU-Sv-OVz" id="9ih-n5-BQn"/>
                                     <outlet property="descriptionLabel" destination="M3E-hX-y6C" id="ab1-Ot-7Ms"/>
+                                    <segue destination="6w0-uC-uOc" kind="show" identifier="EditLocation" id="ZZe-g0-Hsk"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -486,6 +487,9 @@
             <point key="canvasLocation" x="889" y="903"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="ZZe-g0-Hsk"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
