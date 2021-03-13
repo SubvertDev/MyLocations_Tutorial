@@ -473,7 +473,7 @@
         <!--Map-->
         <scene sceneID="ef2-cj-ADh">
             <objects>
-                <viewController title="Map" id="IC8-ZF-hQr" sceneMemberID="viewController">
+                <viewController title="Map" id="IC8-ZF-hQr" customClass="MapViewController" customModule="MyLocations" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="pcS-0N-swh">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -492,9 +492,20 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Map" id="mf4-VJ-eXd">
-                        <barButtonItem key="leftBarButtonItem" title="Locations" id="AZb-Km-vNn"/>
-                        <barButtonItem key="rightBarButtonItem" title="User" id="We8-Yh-b9f"/>
+                        <barButtonItem key="leftBarButtonItem" title="Locations" id="AZb-Km-vNn">
+                            <connections>
+                                <action selector="showLocations" destination="IC8-ZF-hQr" id="kDf-Cd-hro"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="User" id="We8-Yh-b9f">
+                            <connections>
+                                <action selector="showUser" destination="IC8-ZF-hQr" id="BCV-tw-vgI"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="mapView" destination="yJb-Ov-rNG" id="5BO-GS-4Va"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="y0C-f3-pj5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
