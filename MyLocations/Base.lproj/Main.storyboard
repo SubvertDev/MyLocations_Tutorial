@@ -107,7 +107,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1654" y="125"/>
+            <point key="canvasLocation" x="1682" y="-662"/>
         </scene>
         <!--Tag Location-->
         <scene sceneID="pgW-S9-RqM">
@@ -330,7 +330,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nlS-Kn-PBy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2418" y="126"/>
+            <point key="canvasLocation" x="2655" y="-662"/>
         </scene>
         <!--Category Picker View Controller-->
         <scene sceneID="rQM-F4-jIq">
@@ -372,7 +372,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="A9b-Hz-1DD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="G7t-J5-RQc" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="3148" y="125"/>
+            <point key="canvasLocation" x="3386" y="-663"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="dm5-FD-9ts">
@@ -411,7 +411,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1yI-vW-y5N" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="888.79999999999995" y="126.38680659670166"/>
+            <point key="canvasLocation" x="918" y="-660"/>
         </scene>
         <!--Root View Controller-->
         <scene sceneID="m4e-jx-PnB">
@@ -468,7 +468,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rgz-x4-8aa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1637.5999999999999" y="902.69865067466276"/>
+            <point key="canvasLocation" x="1681" y="128"/>
         </scene>
         <!--Map-->
         <scene sceneID="ef2-cj-ADh">
@@ -508,11 +508,12 @@
                     </navigationItem>
                     <connections>
                         <outlet property="mapView" destination="yJb-Ov-rNG" id="5BO-GS-4Va"/>
+                        <segue destination="6w0-uC-uOc" kind="show" identifier="EditLocation" id="Z2N-nC-w0s"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="y0C-f3-pj5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1828" y="-587.85607196401804"/>
+            <point key="canvasLocation" x="1681" y="896"/>
         </scene>
         <!--Locations-->
         <scene sceneID="jKN-1W-1H0">
@@ -529,7 +530,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JSg-gj-Ian" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="889" y="903"/>
+            <point key="canvasLocation" x="918" y="128"/>
         </scene>
         <!--Map-->
         <scene sceneID="fir-vo-Kic">
@@ -548,11 +549,11 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9JV-8K-iZ9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="888.79999999999995" y="-587.85607196401804"/>
+            <point key="canvasLocation" x="918" y="896"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="ZZe-g0-Hsk"/>
+        <segue reference="Z2N-nC-w0s"/>
     </inferredMetricsTieBreakers>
     <resources>
         <systemColor name="labelColor">
