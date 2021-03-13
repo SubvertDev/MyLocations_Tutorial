@@ -10,21 +10,24 @@ import CoreData
 import CoreLocation
 
 class LocationsViewController: UITableViewController {
+    
     var managedObjectContext: NSManagedObjectContext!
+    
     lazy var fetchedResultsController: NSFetchedResultsController<Location> = {
         let fetchRequest = NSFetchRequest<Location>()
         
         let entity = Location.entity()
         fetchRequest.entity = entity
         
-        let sortDescriptor = NSSortDescriptor(key: "date", ascending: true)
-        fetchRequest.sortDescriptors = [sortDescriptor]
+        let sort1 = NSSortDescriptor(key: "category", ascending: true)
+        let sort2 = NSSortDescriptor(key: "date", ascending: true)
+        fetchRequest.sortDescriptors = [sort1, sort2]
         
         fetchRequest.fetchBatchSize = 20
         
         let fetchedResultscontroller = NSFetchedResultsController(fetchRequest: fetchRequest,
                                                                   managedObjectContext: self.managedObjectContext,
-                                                                  sectionNameKeyPath: nil,
+                                                                  sectionNameKeyPath: "category",
                                                                   cacheName: "Locations")
         
         fetchedResultscontroller.delegate = self
@@ -66,6 +69,15 @@ class LocationsViewController: UITableViewController {
                 fatalCoreDataError(error)
             }
         }
+    }
+    
+    override func numberOfSections(in tableView: UITableView) -> Int {
+        return fetchedResultsController.sections!.count
+    }
+    
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        let sectionInfo = fetchedResultsController.sections![section]
+        return sectionInfo.name
     }
     
     // MARK: - Navigation
