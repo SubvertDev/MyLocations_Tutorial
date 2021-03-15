@@ -13,7 +13,7 @@ private let dateFormatter: DateFormatter = {
     let formatter = DateFormatter()
     formatter.dateStyle = .medium
     formatter.timeStyle = .short
-    print("Date Formatter Created")
+    //print("Date Formatter Created")
     return formatter
 }()
 
@@ -39,6 +39,8 @@ class LocationDetailsViewController: UITableViewController {
     var descriptionText = ""
     
     var managedObjectContext: NSManagedObjectContext!
+    
+    var observer: Any!
     
     var locationToEdit: Location? {
         didSet {
@@ -74,6 +76,13 @@ class LocationDetailsViewController: UITableViewController {
         let gestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(hideKeyboard))
         gestureRecognizer.cancelsTouchesInView = false
         tableView.addGestureRecognizer(gestureRecognizer)
+        
+        listenForBackgroundNotification()
+    }
+    
+    deinit {
+        print("deinit \(self)")
+        NotificationCenter.default.removeObserver(observer!)
     }
     
     // MARK: - Actions
@@ -181,6 +190,17 @@ class LocationDetailsViewController: UITableViewController {
             return
         }
         descriptionTextView.resignFirstResponder()
+    }
+    
+    func listenForBackgroundNotification() {
+        observer = NotificationCenter.default.addObserver(forName: UIScene.didEnterBackgroundNotification, object: nil, queue: OperationQueue.main) { [weak self] _ in
+            if let weakSelf = self {
+                if weakSelf.presentedViewController != nil {
+                    weakSelf.dismiss(animated: false, completion: nil)
+                }
+                weakSelf.descriptionTextView.resignFirstResponder()
+            }
+        }
     }
     
     func show(image: UIImage) {
