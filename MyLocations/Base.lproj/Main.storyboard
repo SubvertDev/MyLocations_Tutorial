@@ -187,10 +187,20 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ndL-l6-jsz">
+                                                    <rect key="frame" x="112" y="10" width="228" height="24"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="24" id="JTr-bC-rBA"/>
+                                                    </constraints>
+                                                </imageView>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="ndL-l6-jsz" secondAttribute="trailing" constant="8" id="2vk-wZ-ofb"/>
                                                 <constraint firstItem="Vbx-Q7-4qS" firstAttribute="centerY" secondItem="v20-15-NXv" secondAttribute="centerY" id="92m-Vd-Bhb"/>
+                                                <constraint firstAttribute="bottom" secondItem="ndL-l6-jsz" secondAttribute="bottom" constant="10" id="ZWf-ox-oTD"/>
+                                                <constraint firstItem="ndL-l6-jsz" firstAttribute="top" secondItem="v20-15-NXv" secondAttribute="top" constant="10" id="fNu-8d-8NO"/>
                                                 <constraint firstItem="Vbx-Q7-4qS" firstAttribute="leading" secondItem="v20-15-NXv" secondAttribute="leadingMargin" id="j59-on-QGd"/>
+                                                <constraint firstItem="ndL-l6-jsz" firstAttribute="leading" secondItem="Vbx-Q7-4qS" secondAttribute="trailing" constant="16" id="vhv-Ae-y1k"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -320,17 +330,20 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="addPhotoLabel" destination="Vbx-Q7-4qS" id="1y3-v5-M7o"/>
                         <outlet property="addressLabel" destination="S5L-o5-RlM" id="BP8-dA-LRO"/>
                         <outlet property="categoryLabel" destination="T9W-C1-Rqj" id="S4C-bV-RCw"/>
                         <outlet property="dateLabel" destination="VQ6-Ce-G6G" id="2DR-M9-rox"/>
                         <outlet property="descriptionTextView" destination="cyG-ZO-IZa" id="KDe-0f-gpE"/>
+                        <outlet property="imageHeight" destination="JTr-bC-rBA" id="lBe-1i-bfj"/>
+                        <outlet property="imageView" destination="ndL-l6-jsz" id="tml-eV-vWY"/>
                         <outlet property="latitudeLabel" destination="xHA-Pd-fUA" id="wf5-Cb-gQE"/>
                         <outlet property="longitudeLabel" destination="GjS-ev-cz5" id="gdc-Zg-LWJ"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nlS-Kn-PBy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2655" y="-662"/>
+            <point key="canvasLocation" x="2653.5999999999999" y="-662.51874062968523"/>
         </scene>
         <!--Category Picker View Controller-->
         <scene sceneID="rQM-F4-jIq">
