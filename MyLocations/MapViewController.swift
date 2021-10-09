@@ -21,11 +21,6 @@ class MapViewController: UIViewController {
                 forName: Notification.Name.NSManagedObjectContextObjectsDidChange,
                 object: managedObjectContext,
                 queue: OperationQueue.main) { notification in
-                //if let dictionary = notification.userInfo {
-                    //print(dictionary[NSInsertedObjectsKey])
-                    //print(dictionary[NSUpdatedObjectsKey])
-                    //print(dictionary[NSDeletedObjectsKey])
-                //}
                 if self.isViewLoaded {
                     self.updateLocations()
                 }

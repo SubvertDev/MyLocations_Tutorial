@@ -13,7 +13,6 @@ private let dateFormatter: DateFormatter = {
     let formatter = DateFormatter()
     formatter.dateStyle = .medium
     formatter.timeStyle = .short
-    //print("Date Formatter Created")
     return formatter
 }()
 

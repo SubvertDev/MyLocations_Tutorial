@@ -52,7 +52,6 @@ class CurrentLocationViewController: UIViewController, CLLocationManagerDelegate
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
         loadSoundEffect("Sound.caf")
         updateLabels()
     }
@@ -140,7 +139,6 @@ class CurrentLocationViewController: UIViewController, CLLocationManagerDelegate
             location = newLocation
             
             if newLocation.horizontalAccuracy <= locationManager.desiredAccuracy {
-                //print("We're done!")
                 stopLocationManager()
                 if distance > 0 {
                     performingReversGeocoding = false
@@ -149,7 +147,6 @@ class CurrentLocationViewController: UIViewController, CLLocationManagerDelegate
             updateLabels()
             
             if !performingReversGeocoding {
-                //print("Going to geocode")
                 performingReversGeocoding = true
                 
                 geocoder.reverseGeocodeLocation(newLocation) {placemarks, error in
@@ -171,7 +168,6 @@ class CurrentLocationViewController: UIViewController, CLLocationManagerDelegate
         } else if distance < 1 {
             let timeInterval = newLocation.timestamp.timeIntervalSince(location!.timestamp)
             if timeInterval > 10 {
-                //print("Force done!")
                 stopLocationManager()
                 updateLabels()
             }
@@ -238,7 +234,6 @@ class CurrentLocationViewController: UIViewController, CLLocationManagerDelegate
         if CLLocationManager.locationServicesEnabled() {
             locationManager.delegate = self
             locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
-            //locationManager.desiredAccuracy = kCLLocationAccuracyHundredMeters
             locationManager.startUpdatingLocation()
             updatingLocation = true
             
@@ -349,7 +344,6 @@ class CurrentLocationViewController: UIViewController, CLLocationManagerDelegate
     }
     
     @objc func didTimeOut() {
-        //print("Time out")
         if location == nil {
             stopLocationManager()
             lastLocationError = NSError(domain: "MyLocationsErrorDomain",
